@@ -1,0 +1,22 @@
+table tr th:nth-child(5){
+	width: 40px !important;
+}
+table{
+	font-size: 2em !important;
+	color: white;
+
+}
+.field{
+	position: absolute;
+	top:0;	
+	bottom:0;	
+	left:0;	
+	right: 0;
+	background: url("../Dreamweaver.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+			
+}

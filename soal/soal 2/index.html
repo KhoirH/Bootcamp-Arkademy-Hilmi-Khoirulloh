@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>soal 2</title>
+	<script type="text/javascript" src="function.js"></script>
+</head>
+<body>
+	<form method="post" >
+		<div class="validate"></div>
+		<input type="text" name="username" placeholder="Username" >		
+		<input type="email" name="email" placeholder="Email" >
+		<input type="text" name="phone" placeholder="Number Phone" >
+		<button>Cek</button>
+	</form>
+	<script type="text/javascript">
+		$element_validate = document.getElementsByClassName("validate")[0];
+		
+    	$form = document.getElementsByTagName("form")[0];
+		$input = $form.getElementsByTagName("input");
+    	validate = [];
+
+
+    	$form.onsubmit = function(e){
+    		e.preventDefault();    		
+    		if (hasAccess("username",/^[a-z]+$/)) {
+				validate.push(["Username Tidak Valid"]);
+    		}
+    		if (hasAccess("email",/^\w+(\.[a-z]+)*$/)) {
+				validate.push(["Email Tidak Valid"]);
+    		}
+    		if (hasAccess("phone",/^-?\+*\d*\.?\d*$/)) {
+				validate.push(["Number Tidak Valid"]);
+    		}
+			$validate = (Boolean(validate[0]))? validate[0]:"Memenuhi seluruh ketentuan" ;  		
+			$element_validate.innerHTML = $validate;
+			validate= [];
+    	}    	
+	</script>
+</body>
+</html>
